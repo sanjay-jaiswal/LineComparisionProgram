@@ -5,7 +5,7 @@ namespace Line_Comparision
     class Program
     {
         /// <summary>
-        /// Calculate length of two lines
+        /// Calculate length of two lines and comparing using compareTo() method
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
@@ -31,13 +31,26 @@ namespace Line_Comparision
             //Console.WriteLine(calculateDistance(x2, y3, x4, y4));
 
             //Calculate line 1 and line 2 distance
-            double distance1 = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
-            double distance2 = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
+            double val1 = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+            double val2 = Math.Sqrt(Math.Pow((x4 - x3), 2) + Math.Pow((y4 - y3), 2));
 
             //Compare both lines
-            Console.WriteLine(distance1.Equals(distance2));
+            int compareCheck = val1.CompareTo(val2);
+            Boolean equalCheck = val1.Equals(val2);
 
-
+            //Check for Compare
+            if (compareCheck > 0)
+            {
+                Console.WriteLine("Line 1 is greater than Line 2");
+            }
+            else if (compareCheck < 0)
+            {
+                Console.WriteLine("Line 1 is smaller than Line 2");
+            }
+            else
+            {
+                Console.WriteLine("Line 1 is equals to Line 2");
+            }
         }
     }
- }
+}
